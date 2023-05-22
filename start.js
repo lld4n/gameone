@@ -1,7 +1,10 @@
 let stat = localStorage.getItem('stats');
 let statsList = document.querySelector('.stats__list');
 if (stat === null) {
-  localStorage.setItem('stats', "{stats: []}");
+  let stats = {
+    "stats": []
+  }
+  localStorage.setItem('stats', JSON.stringify(stats));
 } else {
   let stats = JSON.parse(stat);
 
